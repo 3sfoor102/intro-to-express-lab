@@ -52,21 +52,21 @@ app.get('/collectibles/:num', function(req,res){
 
 
 app.get('/shoes', function(req, res) {
-    const minPrice = parseInt(req.query.minPrice);
-    const maxPrice = parseInt(req.query.maxPrice);
+    const minPrice = parseInt(req.query.minPrice)
+    const maxPrice = parseInt(req.query.maxPrice)
     const type = req.query.type
 
-    let ModifiedShoes = shoes;
+    let ModifiedShoes = shoes
     if (minPrice) { 
         ModifiedShoes = ModifiedShoes.filter(function(item) {
-            return item.price >= minPrice;
-        });
+            return item.price >= minPrice
+        })
     }
 
     if (maxPrice) {
         ModifiedShoes = ModifiedShoes.filter(function(item) {
-            return item.price <= maxPrice;
-        });
+            return item.price <= maxPrice
+        })
     }
 
     if (type) {
@@ -76,8 +76,8 @@ app.get('/shoes', function(req, res) {
         })
     }
 
-    res.send(ModifiedShoes);
-});
+    res.send(ModifiedShoes)
+})
 
 
 
